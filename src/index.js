@@ -5,7 +5,7 @@ import App from "./App"
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"
 
 const client = new ApolloClient({
-  uri: `http://localhost:${process.env.PORT}/`,
+  uri: `https://el-cocinillas-graphql-api.herokuapp.com/`,
   cache: new InMemoryCache({
     addTypename: false
   })
