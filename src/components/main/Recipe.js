@@ -49,9 +49,9 @@ export default function Recipe({ actualRecipe, renderRecipe }) {
       name: actualRecipe.frontImage
     }
   })
-
-  if (!localStorage[actualRecipe.frontImage] && data && data.getImage)
-    localStorage[data.frontImage.name] = data.frontImage.data
+  if (!localStorage[actualRecipe.frontImage] && data && data.getImage) {
+    localStorage[data.getImage.name] = data.getImage.data
+  }
 
   useEffect(() => {
     changeBackgroundColor()
