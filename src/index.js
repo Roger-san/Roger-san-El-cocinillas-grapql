@@ -13,9 +13,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache({
     addTypename: false
   })
-})
-.catch(err => console.log('uups',err))
-.then(console.log('DB connected')
+}).catch(err => console.log('uups',err))
+
 render(
   <ApolloProvider client={client}>
     <App />
