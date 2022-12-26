@@ -14,7 +14,8 @@ const client = new ApolloClient({
     addTypename: false
   })
 })
-
+.catch(err => console.log('uups',err))
+.then(console.log('DB connected')
 render(
   <ApolloProvider client={client}>
     <App />
