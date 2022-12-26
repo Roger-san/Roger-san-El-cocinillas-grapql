@@ -13,7 +13,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache({
     addTypename: false
   })
-}).catch(err => console.log('uups',err))
+})
 
 render(
   <ApolloProvider client={client}>
