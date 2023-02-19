@@ -352,7 +352,7 @@ label {
 /* container */
 
 .container {
-  max-width: 80vw !important;
+  max-width: 60vw !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -368,6 +368,7 @@ label {
     width: 100%;
     margin-bottom: 2rem !important;
   }
+
   .container {
     padding-bottom: 0.5rem !important;
   }
