@@ -10,7 +10,9 @@ const GET_RECIPE = gql`
   query ($page: Int!, $token: String, $isToken: Boolean!) {
     getTotalRecipes {
       qty
-      names 
+       optionList{
+        recipeName
+      }
     }
     findRecipesByPage(page: $page) {
       author
