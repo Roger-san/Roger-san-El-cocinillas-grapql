@@ -10,9 +10,7 @@ const GET_RECIPE = gql`
   query ($page: Int!, $token: String, $isToken: Boolean!) {
     getTotalRecipes {
       qty
-      optionList {
-        recipeName
-      }
+      names 
     }
     findRecipesByPage(page: $page) {
       author
@@ -65,6 +63,7 @@ export default function App() {
   // load multiples of 12 recipes, all the names of the recipes
   // for the options of the searcher
   // and loads the user if exist a token
+  
   const { loading, error, data } = useQuery(GET_RECIPE, {
     variables: {
       page: pagePosition,
@@ -72,6 +71,7 @@ export default function App() {
       isToken
     }
   })
+
   useEffect(() => {
     if (data) {
       function Table(Page, pagePosition, loggedUserData, actualRecipe) {
@@ -103,7 +103,7 @@ export default function App() {
               page,
               setLoggedUserData
             }}
-            optionList={data.getTotalRecipes.optionList}
+            optionList={data.getTotalRecipes}
           />
           <MainPage
             state={{ page, pagePosition, loggedUserData, actualRecipe, setPagePosition }}
