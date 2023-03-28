@@ -4,18 +4,18 @@ import React, { useState } from "react"
 export default function Searcher({ optionList, setPage, setActualRecipe }) {
     const [inputValue, setInputValue] = useState("")
     const [sendQuery, setSendQuery] = useState(false)
-    optionList = optionList.optionList.map((recipe) => recipe.recipeName)
 
     // saves the input data into the state
     // if the input have the error class is deleted
     const handleChange = (event) => {
         const input = event.target
+
         const regexp = new RegExp(input.value, "i")
 
-        if(!optionList.some(str => str.match(regexp)) && ![...input.classList].includes("error") ){
+        if(!optionList.names.some(str => str.match(regexp)) && ![...input.classList].includes("error") ){
             input.classList.add("error")
         }
-        if(optionList.some(str => str.match(regexp)) && [...input.classList].includes("error")){
+        if(optionList.names.some(str => str.match(regexp)) && [...input.classList].includes("error")){
             input.classList.toggle("error")
         }
 
@@ -76,7 +76,7 @@ export default function Searcher({ optionList, setPage, setActualRecipe }) {
                 onChange={handleChange}
             ></input>
             <datalist id="search">
-                {inputValue.length >= 2 && optionList.map((recipe, index) => <option key={index} value={recipe}></option>)}
+                {inputValue.length >= 2 && optionList.names.map((recipe, index) => <option key={index} value={recipe}></option>)}
             </datalist>
         </form>
     );
