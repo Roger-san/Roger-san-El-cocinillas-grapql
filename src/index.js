@@ -9,8 +9,7 @@ import "jquery/dist/jquery.min"
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client"
 
 const client = new ApolloClient({
-  // uri: "http://localhost:4000/",
-  uri: `https://el-cocinillas-graphql-api-production.up.railway.app/`,
+  uri: `https://fast-dulcinea-roger-san-2c000628.koyeb.app/`,
   cache: new InMemoryCache({
     addTypename: false
   })
